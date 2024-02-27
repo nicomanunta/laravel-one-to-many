@@ -20,6 +20,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Nome progetto</th>
                         <th scope="col">Descrizione</th>
+                        <th scope="col">Tipo</th>
                         <th scope="col">Slug</th>
                         <th scope="col">Immagine</th>
                         <th scope="col">Data</th>
@@ -33,6 +34,7 @@
                             <td>{{$project->id}}</td>
                             <td>{{$project->nome_progetto}}</td>
                             <td>{{Str::limit($project->descrizione, 30, '...')}}</td>
+                            <td>{{$project->type ? $project->type->name : 'Senza tipo'}}</td>
                             <td>{{$project->slug}}</td>
                             <td>{{Str::limit($project->cover_immagine, 30, '...')}}</td>
                             <td>{{$project->data}}</td>
