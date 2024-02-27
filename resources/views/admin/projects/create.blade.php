@@ -37,6 +37,9 @@
                                 <option value="{{$type->id}}">{{$type->name}}</option>
                             @endforeach
                         </select>
+                        @error('type_id')
+                            <div class="text-danger">{{$message}}</div> 
+                        @enderror
                     </div>
                     <div class="form-group mb-3">
                         <label for="cover_immagine">Immagine copertina</label>

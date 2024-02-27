@@ -26,6 +26,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'nome_progetto' => 'required|max:50',
             'descrizione' => 'required|string',
+            'type_id' => 'nullable|exists:types,id',
             'data' => 'required|date',
             'cover_immagine' => 'required'
         ];
@@ -38,6 +39,7 @@ class StoreProjectRequest extends FormRequest
             'nome_progetto.max' => 'Il nome non deve superare i 50 caratteri',
             'descrizione.required' =>'Descrizione obbligatoria',
             'descrizione.string' => 'La descrizione deve essere inserita come testo',
+            'type_id.exists' => 'La categoria selelzionata non esiste',
             'data.required'=> 'Data obbligatoria',
             'data.date'=> 'Deve essere una data valida',
             'cover_immagine.required'=> 'Immagine obbligatorio',
