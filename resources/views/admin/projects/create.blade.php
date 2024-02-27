@@ -30,6 +30,15 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
+                        <label for="type_id">Seleziona tipo</label>
+                        <select name="type_id" id="type_id" class="form-select">
+                            <option value="">Seleziona il tipo</option>
+                            @foreach ($types as $type)
+                                <option value="{{$type->id}}">{{$type->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
                         <label for="cover_immagine">Immagine copertina</label>
                         <input type="file" class="form-control" name="cover_immagine" id="cover_immagine" placeholder="">
                         @error('cover_immagine')
