@@ -30,6 +30,18 @@
                             <div class="text-danger">{{$message}}</div> 
                         @enderror
                     </div>
+                    <div class="form-group mb-3">
+                        <label for="type_id">Seleziona tipo</label>
+                        <select name="type_id" id="type_id" class="form-select">
+                            <option value="">Seleziona il tipo</option>
+                            @foreach ($types as $type)
+                                <option value="{{$type->id}}" @selected($type->id == old('type_id', $project->type ? $project->type->id : ''))>{{$type->name}}</option>
+                            @endforeach
+                        </select>
+                        @error('type_id')
+                            <div class="text-danger">{{$message}}</div> 
+                        @enderror
+                    </div>
                     <div class="form-group mb-3" >
                         <div class="mb-3">
                             @if ($project->cover_immagine != null)
